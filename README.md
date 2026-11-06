@@ -4,7 +4,7 @@ A multi-tenant, agentic platform for real estate brokerages and property managem
 
 Digital workers do the routine work: leasing inquiries, maintenance triage, transaction checklists, owner statements. People make every decision that affects someone's housing, money or legal position.
 
-**Status:** concept (v0.1, Nov 5, 2026). There's no code yet. The build starts once the open questions in [`docs/QUESTIONS.md`](docs/QUESTIONS.md) (RE-01 to RE-05) are answered.
+**Status:** concept (v0.1, Nov 5, 2026). PropertySmith is built in [`nhmillerbusiness/staffingplatform`](https://github.com/nhmillerbusiness/staffingplatform), folder `propertysmith/`, on a common core shared with StaffSmith (ADR 0001). This repo keeps the first design as history.
 
 ## Read in this order
 

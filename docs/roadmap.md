@@ -8,13 +8,13 @@ Build order from `docs/concept.md`. Items marked `(waiting: RE-nn)` wait on Nath
 - [x] First state: Arizona (Nathan, Nov 5, 2026)
 - [ ] First firm (RE-04: coming)
 - [ ] Product name (waiting: RE-06)
-- [ ] ADR 0001: how the common core is shared, one monorepo or published packages (waiting: RE-07)
+- [x] ADR 0001: one repo, on a common core (StaffSmith ADR 0023; Nathan, Nov 5, 2026)
 - [ ] PropertySmith's AWS accounts and budgets, created by Nathan
 
 ## Phase 1: Shared core and skeleton
 
-- [ ] Shared core extracted from StaffSmith into packages, with StaffSmith still passing its checks
-- [ ] Repo skeleton: CDK, Kysely, React + Vite, `scripts/check.sh`, CI, the cost guards
+- [ ] Core pieces extracted from `services/ats` into `packages/` as PropertySmith needs them, StaffSmith's checks green after each
+- [ ] `propertysmith/` skeleton in the StaffSmith repo: its CDK app, apps and services workspaces, `propertysmith/scripts/check.sh`, the lint boundary rule, the cost guards
 - [ ] Tenant creation, sign-in, the decisions queue and the AI gateway wired to the core
 - [ ] A demo tenant with sample owners, properties, units, residents and vendors
 

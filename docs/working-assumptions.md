@@ -30,6 +30,10 @@ These are binding for Claude Code. Change them only through Nathan, and record e
 | Texting | AWS End User Messaging SMS, fake adapter until launch | ADR 0018 |
 | Models | Claude through the AI gateway; Haiku and Sonnet by default | Agents and AI gateway |
 
+## Where it's built (RE-07)
+
+In `nhmillerbusiness/staffingplatform`, folder `propertysmith/`, on the common core in `packages/` (ADR 0001; StaffSmith ADR 0023).
+
 ## Scope (Nathan, Nov 5, 2026)
 
 - **Market:** residential and commercial (RE-01). Residential workflows ship first in each module; commercial lease types are in the data model from day one.
@@ -40,6 +44,5 @@ These are binding for Claude Code. Change them only through Nathan, and record e
 
 ## Not decided
 
-- **How the common core is shared** (RE-07). Nathan decided on a common core with no duplicated fundamentals. The open part is how it's shared: one monorepo for the core and both products, or a core published as private packages. It needs an ADR in both repos.
 - **The product name** (RE-06).
 - **Pricing** (concept, "Pricing ideas"), which waits on the StaffSmith digital worker pricing conversation.

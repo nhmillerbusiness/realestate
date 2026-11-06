@@ -51,5 +51,5 @@ Open questions for Nathan, newest at the bottom of each list. When a question is
   - a separate packages repo;
   - a shared monorepo;
   - published npm packages.
-- **Answer (Nathan, Nov 5, 2026):** build both products on a common core; don't duplicate fundamentals. How the core is shared (one monorepo, or a core published as packages) is still to choose; it becomes ADR 0001 here and an ADR in StaffSmith.
-- **Status:** partly answered
+- **Answer (Nathan, Nov 5, 2026):** one common core, with no duplicated fundamentals, in one repo. PropertySmith is built in `staffingplatform/propertysmith/`, on the core in `packages/` (ADR 0001 here; StaffSmith ADR 0023).
+- **Status:** answered
