@@ -8,14 +8,15 @@ Build order from `docs/concept.md`. Items marked `(waiting: RE-nn)` wait on Nath
 - [x] First state: Arizona (Nathan, Nov 5, 2026)
 - [ ] First firm (RE-04: coming)
 - [ ] Product name (waiting: RE-06)
-- [x] ADR 0001: modules on the StaffSmith platform, schema per module (Nathan, Nov 5, 2026)
+- [x] One platform with product modules, schema per module (StaffSmith ADR 0023; Nathan, Nov 5, 2026)
 
-## Phase 1: Shared core and skeleton
+## Phase 1: Modules on the platform
 
 - [ ] Core pieces extracted from `services/ats` into `packages/` as PropertySmith needs them, StaffSmith's checks green after each
-- [ ] `propertysmith/` skeleton in the StaffSmith repo: its CDK app, apps and services workspaces, `propertysmith/scripts/check.sh`, the lint boundary rule, the cost guards
-- [ ] Tenant creation, sign-in, the decisions queue and the AI gateway wired to the core
-- [ ] A demo tenant with sample owners, properties, units, residents and vendors
+- [ ] Module flags per tenant (`staffing`, `brokerage`, `property_management`); nav and routes by module; product name and brand by module
+- [ ] `realestate/` workspaces, the `realestate` and `trust` schemas, the migration-scope check, the lint boundary rule; real estate stacks in the CDK app behind a setting
+- [ ] Object types registered by the real estate modules (property, unit, lease, listing, transaction) for links, Inbox, rules and custom fields
+- [ ] A real estate demo tenant with sample owners, properties, units, residents and vendors
 
 ## Phase 2: Property management, leasing (built alongside Phase 4, RE-02)
 
@@ -48,7 +49,7 @@ Build order from `docs/concept.md`. Items marked `(waiting: RE-nn)` wait on Nath
 - [ ] Commercial leases: gross, modified gross and triple net; CAM estimates and annual reconciliation; percentage rent; tenant improvements and allowances
 - [ ] Commercial brokerage: LOIs, longer deal stages, landlord and tenant representation
 
-## Phase 5: Integration with StaffSmith
+## Phase 5: Across modules
 
-- [ ] One sign-in and one operator console for firms on both products
-- [ ] The shared core released on its own schedule
+- [ ] A real estate tenant turning on staffing's recruiting for agent recruiting
+- [ ] One contact seen across modules (a candidate who is also an owner)

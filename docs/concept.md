@@ -1,6 +1,6 @@
 # PropertySmith: a real estate platform on the StaffSmith foundation
 
-v0.1 · Nov 5, 2026 · Nathan Miller · committed from the Claude Doc of the same name
+v0.2 · Nov 5, 2026 · Nathan Miller · committed from the Claude Doc of the same name, with ADR 0023's platform decision
 
 PropertySmith (a working name) is a multi-tenant platform for small and mid-sized real estate brokerages and property management firms. It's built on StaffSmith's foundation, with digital workers doing the routine work and people making every consequential decision. Most of the platform's core carries over unchanged; the real estate parts are new modules on the same core.
 
@@ -32,7 +32,7 @@ PropertySmith (a working name) is a multi-tenant platform for small and mid-size
   - QuickBooks and commissions;
   - the operator console and evals.
 - **Why it could win:** the leaders are either strong CRMs with no property management (Follow Up Boss, Lofty, BoldTrail) or strong property management with a light CRM (AppFolio, Buildium). Big operators are adding AI agents fast (AppFolio's Realm-X, EliseAI), but they sell to large portfolios. One agentic platform for the small firm that does both is the gap.
-- **Separate from StaffSmith for now:** its own repo and product, sharing the foundation as packages. It's integrated later, when the shared core is extracted (see the build order).
+- **The same platform as StaffSmith (ADR 0023):** modules a tenant turns on, with one deployment and one database. Shared records (contacts, companies, activities, tasks, the Inbox, comms, decisions) serve every module; real estate data sits in its own `realestate` schema, and trust money in a `trust` schema.
 
 ## The market
 
@@ -57,7 +57,7 @@ The market splits three ways, and no product spans all three for a small firm. P
 
 ## How the foundation maps over
 
-Three products sit on one shared core:
+Three modules sit on one platform:
 
 - **Staffing:** StaffSmith today.
 - **Brokerage:** a new module.
@@ -65,7 +65,7 @@ Three products sit on one shared core:
 
 All three run their digital workers through the AI gateway. Each worker does the routine work; a person makes every consequential decision.
 
-The shared core holds these packages, extracted from StaffSmith:
+The shared core holds these pieces, already built in StaffSmith and shared on the same platform:
 
 - tenancy and RLS;
 - sign-in and portal;
@@ -209,18 +209,16 @@ Property management software is usually priced per unit (door) per month, and br
 
 ### Build order
 
-1. **Extract the shared core** from StaffSmith into packages:
-   - tenancy, gateway, decisions and the action log;
-   - Inbox and tasks, comms, templates and rules;
-   - custom objects, the integrations hub, the portal and the operator console.
+Staffing work always comes first; real estate is backfill (Nathan, Nov 5, 2026).
 
-   StaffSmith keeps running on them unchanged.
-2. **PropertySmith skeleton:** its own repo and AWS accounts (the same Lambda, Aurora and SQS defaults), and its own demo tenant.
-3. **Property management first:** owners, properties, units, leasing, applications and screening, leases. It's the larger and stickier half: firms rarely switch their system of record.
-4. **Rent, maintenance and trust accounting,** with the maintenance coordinator and accounting assistant.
-5. **Brokerage:** leads, nurture, buyer agreements, showings, transactions, agent commissions.
-6. **MLS and syndication adapters** per market, starting with Arizona's.
-7. **Integration with StaffSmith:** one sign-in and one operator console for firms that use both, and the shared core released on its own schedule.
+1. **Modules on the platform:** module flags per tenant, nav and brand by module, the `realestate` and `trust` schemas, the boundary checks, and object types registered for links, Inbox and rules. Core pieces move out of `services/ats` only as real estate needs them.
+2. **Property management and brokerage together** (RE-02):
+   - owners, properties, units, leasing, applications and screening, leases;
+   - leads, nurture, buyer agreements, showings.
+3. **Rent, maintenance and trust accounting,** with the maintenance coordinator and accounting assistant; offers and transactions, with the transaction coordinator.
+4. **Commercial:** lease types, CAM reconciliation, percentage rent, LOIs (RE-01).
+5. **MLS and syndication adapters** per market, starting with Arizona's.
+6. **Across modules:** agent recruiting with staffing's ATS; one contact across modules.
 
 ## Open questions for Nathan
 
