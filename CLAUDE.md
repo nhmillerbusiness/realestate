@@ -6,7 +6,7 @@ Instructions for Claude Code in this repository. Read this first, then the docs 
 
 PropertySmith is a working name, built by NHMiller Enterprises. It's an agentic platform for real estate brokerages and property management firms: leads to closing, and owner to resident. It's multi-tenant from day one, and runs on the StaffSmith foundation (`nhmillerbusiness/staffingplatform`).
 
-**This repo is design history.** PropertySmith is built in `nhmillerbusiness/staffingplatform`, folder `propertysmith/`, on the common core in `packages/` (ADR 0001; StaffSmith ADR 0023). Its docs move there with design-v0.9.10; edit them there, not here.
+**This repo is design history.** Real estate is built as modules on the StaffSmith platform, in `nhmillerbusiness/staffingplatform`, folder `realestate/`. There's one deployment and one database, with a schema per module (ADR 0001; StaffSmith ADR 0023). Its docs move there with design-v0.9.10; edit them there, not here.
 
 ## Source of truth (read in this order)
 
@@ -56,7 +56,7 @@ The same as StaffSmith (see its CLAUDE.md, "Cost and override protocol"). Stewar
 - a new paid service (MLS access, screening bureau, payments provider);
 - a vendor dependency that core logic would rely on.
 
-PropertySmith gets its **own AWS accounts**, separate from StaffSmith's. Nathan creates them.
+Real estate runs in StaffSmith's AWS accounts, under the same budgets (ADR 0023).
 
 ## Working with the Claude app
 

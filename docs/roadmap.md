@@ -8,8 +8,7 @@ Build order from `docs/concept.md`. Items marked `(waiting: RE-nn)` wait on Nath
 - [x] First state: Arizona (Nathan, Nov 5, 2026)
 - [ ] First firm (RE-04: coming)
 - [ ] Product name (waiting: RE-06)
-- [x] ADR 0001: one repo, on a common core (StaffSmith ADR 0023; Nathan, Nov 5, 2026)
-- [ ] PropertySmith's AWS accounts and budgets, created by Nathan
+- [x] ADR 0001: modules on the StaffSmith platform, schema per module (Nathan, Nov 5, 2026)
 
 ## Phase 1: Shared core and skeleton
 

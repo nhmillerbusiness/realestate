@@ -17,7 +17,7 @@ These are binding for Claude Code. Change them only through Nathan, and record e
 
 | Area | Default | StaffSmith reference |
 | --- | --- | --- |
-| Cloud | AWS, in PropertySmith's own accounts | Working assumptions |
+| Cloud | AWS, in StaffSmith's accounts | ADR 0001 |
 | Infrastructure as code | AWS CDK in TypeScript | ADR 0001 |
 | Backend language | TypeScript (a narrow Python lane for offline analysis) | ADR 0002 |
 | Frontend | React + Vite, static, behind Cloudflare | ADR 0003 |
@@ -32,7 +32,7 @@ These are binding for Claude Code. Change them only through Nathan, and record e
 
 ## Where it's built (RE-07)
 
-In `nhmillerbusiness/staffingplatform`, folder `propertysmith/`, on the common core in `packages/` (ADR 0001; StaffSmith ADR 0023).
+As modules on the StaffSmith platform (`staffingplatform/realestate/`): one deployment and one database, with `realestate` and `trust` schemas (ADR 0001; StaffSmith ADR 0023).
 
 ## Scope (Nathan, Nov 5, 2026)
 
