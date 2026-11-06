@@ -30,15 +30,16 @@ These are binding for Claude Code. Change them only through Nathan, and record e
 | Texting | AWS End User Messaging SMS, fake adapter until launch | ADR 0018 |
 | Models | Claude through the AI gateway; Haiku and Sonnet by default | Agents and AI gateway |
 
-## Scope assumptions (to confirm: RE-01 to RE-05)
+## Scope (Nathan, Nov 5, 2026)
 
-- **Market:** residential only. Single-family and small multifamily.
-- **Firms:** small and mid-sized, often doing both brokerage and property management.
-- **Order:** property management first, then brokerage.
-- **First state:** Arizona.
+- **Market:** residential and commercial (RE-01). Residential workflows ship first in each module; commercial lease types are in the data model from day one.
+- **Portfolios:** single-family, small multifamily and larger communities (RE-03).
+- **Order:** brokerage and property management built together (RE-02).
+- **First state:** Arizona (RE-05).
+- **First firm:** not yet; the demo tenant stands in (RE-04).
 
 ## Not decided
 
-- **How the shared core gets out of StaffSmith** (RE-07): its own repo of packages, or a monorepo, or published npm packages. It needs an ADR in both repos.
+- **How the common core is shared** (RE-07). Nathan decided on a common core with no duplicated fundamentals. The open part is how it's shared: one monorepo for the core and both products, or a core published as private packages. It needs an ADR in both repos.
 - **The product name** (RE-06).
 - **Pricing** (concept, "Pricing ideas"), which waits on the StaffSmith digital worker pricing conversation.

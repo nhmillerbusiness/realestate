@@ -6,7 +6,7 @@ Instructions for Claude Code in this repository. Read this first, then the docs 
 
 PropertySmith is a working name, built by NHMiller Enterprises. It's an agentic platform for real estate brokerages and property management firms: leads to closing, and owner to resident. It's multi-tenant from day one, and runs on the StaffSmith foundation (`nhmillerbusiness/staffingplatform`).
 
-**Current phase: concept.** Don't scaffold code until Nathan answers RE-01 to RE-05 in `docs/QUESTIONS.md` and the first ADR records the repo structure (RE-07, the shared core).
+**Current phase: concept.** Scope is decided (RE-01 to RE-05, Nov 5, 2026). Don't scaffold code until ADR 0001 records how the common core is shared (RE-07).
 
 ## Source of truth (read in this order)
 

@@ -4,10 +4,11 @@ Build order from `docs/concept.md`. Items marked `(waiting: RE-nn)` wait on Nath
 
 ## Phase 0: Decisions
 
-- [ ] Scope: residential, portfolio size, property management first (waiting: RE-01, RE-02, RE-03)
-- [ ] First firm and first state (waiting: RE-04, RE-05)
+- [x] Scope: residential and commercial, all portfolio sizes, both modules together (Nathan, Nov 5, 2026)
+- [x] First state: Arizona (Nathan, Nov 5, 2026)
+- [ ] First firm (RE-04: coming)
 - [ ] Product name (waiting: RE-06)
-- [ ] ADR 0001: how PropertySmith uses StaffSmith's shared core (waiting: RE-07)
+- [ ] ADR 0001: how the common core is shared, one monorepo or published packages (waiting: RE-07)
 - [ ] PropertySmith's AWS accounts and budgets, created by Nathan
 
 ## Phase 1: Shared core and skeleton
@@ -17,7 +18,7 @@ Build order from `docs/concept.md`. Items marked `(waiting: RE-nn)` wait on Nath
 - [ ] Tenant creation, sign-in, the decisions queue and the AI gateway wired to the core
 - [ ] A demo tenant with sample owners, properties, units, residents and vendors
 
-## Phase 2: Property management, leasing
+## Phase 2: Property management, leasing (built alongside Phase 4, RE-02)
 
 - [ ] Owners, management agreements and the owner portal
 - [ ] Portfolios, properties and units; compliance attributes such as lead-based paint for pre-1978 housing
@@ -35,13 +36,18 @@ Build order from `docs/concept.md`. Items marked `(waiting: RE-nn)` wait on Nath
 - [ ] Trust ledger per bank account; reconciliation signed by a person; owner statements and disbursements through the decisions queue; the accounting assistant
 - [ ] QuickBooks for the management company's own books
 
-## Phase 4: Brokerage
+## Phase 4: Brokerage (built alongside Phases 2 and 3, RE-02)
 
 - [ ] Leads, routing, the lead concierge, nurture
 - [ ] Buyer agreements before showings (NAR settlement); the showing coordinator
 - [ ] Listings, the listing assistant, the MLS adapter (RESO Web API) with a fake
 - [ ] Offers and transactions, the deadline checklist, broker compliance review; the transaction coordinator
 - [ ] Agent commissions on the shared C29 engine
+
+## Phase 4b: Commercial
+
+- [ ] Commercial leases: gross, modified gross and triple net; CAM estimates and annual reconciliation; percentage rent; tenant improvements and allowances
+- [ ] Commercial brokerage: LOIs, longer deal stages, landlord and tenant representation
 
 ## Phase 5: Integration with StaffSmith
 
